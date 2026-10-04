@@ -114,10 +114,11 @@ Certaines fonctionnalités mériteraient d'être améliorées :
 
 ## Installation
 1. Installer les dépendances : `pip install -r requirements.txt`
-2. Un export fictif est fourni dans exemple/test_doctolib_complet.csv pour tester l'application sans compte Doctolib.
-3. Vérifier la présence du dossier `uploads/` (sinon : `mkdir uploads`) et de la base `handsondata.db`
-4. Lancer l'application : `flask run`
-5. Créer un compte, puis importer un export « Historique de RDV » de Doctolib depuis la page d'accueil
+2. Créer la base de données : `sqlite3 handsondata.db < schema.sql`, et le dossier `uploads/` s'il n'existe pas : `mkdir uploads`
+3. Un export fictif est fourni dans exemple/test_doctolib_complet.csv pour tester l'application sans compte Doctolib.
+4. Vérifier la présence du dossier `uploads/` (sinon : `mkdir uploads`) et de la base `handsondata.db`
+5. Lancer l'application : `flask run`
+6. Créer un compte, puis importer un export « Historique de RDV » de Doctolib depuis la page d'accueil
 
 
 ## Utilisation de l'IA
