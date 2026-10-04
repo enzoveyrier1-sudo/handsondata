@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}Tutoriel{% endblock %}
+
+{% block main %}
+    <div class="text-start mx-auto" style="max-width: 700px;">
+        <h2 class="text-center mb-4">Exporter vos données depuis Doctolib</h2>
+
+        <p>HandsOnData analyse l'export « Historique de RDV » de votre agenda Doctolib. Cet export est accessible aux praticiens administrateurs de leur cabinet.</p>
+
+        <ol>
+            <li class="mb-2">Connectez-vous sur <strong>pro.doctolib.fr</strong> avec votre compte professionnel.</li>
+            <li class="mb-2">Ouvrez <strong>Paramètres</strong>, puis <strong>Paramètres avancés</strong> et <strong>Données</strong>.</li>
+            <li class="mb-2">Dans l'onglet <strong>Exports</strong>, choisissez <strong>Historique de RDV</strong>, la période souhaitée et le format <strong>CSV</strong>.</li>
+            <li class="mb-2">Lancez l'export, puis téléchargez le fichier une fois prêt et déchiffrez-le avec votre mot de passe Doctolib.</li>
+            <li class="mb-2">Sur la page d'accueil de HandsOnData, sélectionnez ce fichier CSV et cliquez sur <strong>Analyser</strong>.</li>
+        </ol>
+
+        <h3 class="h5 mt-4">Bon à savoir</h3>
+        <ul>
+            <li>Seules les <strong>3 dernières années</strong> sont analysées, même si votre export couvre une période plus longue.</li>
+            <li>Le fichier doit être au format CSV avec des points-virgules, comme l'export Doctolib d'origine. Ne le modifiez pas avant l'upload.</li>
+            <li>Si l'onglet Exports n'apparaît pas, vérifiez que vous êtes administrateur du cabinet ou contactez le support Doctolib.</li>
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,4 @@
+handsondata.db
+flask_session/
+uploads/*
+__pycache__/

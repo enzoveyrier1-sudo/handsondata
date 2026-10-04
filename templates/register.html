@@ -1,0 +1,22 @@
+<!-- Structure HTML adaptée de mon pset Finance CS50 -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    Créer un compte
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Nom d'utilisateur" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="password" placeholder="Mot de passe" type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Confirmer le mot de passe" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Créer le compte</button>
+    </form>
+{% endblock %}

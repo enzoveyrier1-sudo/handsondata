@@ -1,0 +1,12 @@
+<!-- Page d'erreur : version sobre adaptée de Finance CS50 -->
+{% extends "layout.html" %}
+
+{% block title %}Erreur{% endblock %}
+
+{% block main %}
+    <div class="alert alert-danger mx-auto" style="max-width: 600px;" role="alert">
+        <h2 class="h4">Erreur {{ code }}</h2>
+        <p class="mb-0">{{ message }}</p>
+    </div>
+    <a href="/" class="btn btn-primary">Retour à l'accueil</a>
+{% endblock %}

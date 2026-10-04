@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block main %}
+    <!-- Section 1 : upload -->
+    <div class="mb-5">
+        <h2>Faire une nouvelle analyse</h2>
+        <form action="/analyser" method="post" enctype="multipart/form-data">
+            <input type="file" name="fichier" accept=".csv">
+            <button type="submit" class="btn btn-primary">Analyser</button>
+        </form>
+    </div>
+
+    <!-- Section 2 : historique récent -->
+    <div class="mb-3">
+        <h2>Vos dernières analyses</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Fichier</th>
+                    <th>Période</th>
+                    <th>Consultations</th>
+                    <th>Patients</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for analyse in historique_5 %}
+                    <tr>
+                        <td>{{ analyse.date_analyse }}</td>
+                        <td>{{ analyse.nom_fichier }}</td>
+                        <td>{{ analyse.periode_debut }} → {{ analyse.periode_fin }}</td>
+                        <td>{{ analyse.nb_consultations }}</td>
+                        <td>{{ analyse.nb_patients_uniques }}</td>
+                        <td><a href="/dashboard/{{ analyse.id }}">Voir</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/historique">Voir tout l'historique →</a>
+    </div>
+{% endblock %}

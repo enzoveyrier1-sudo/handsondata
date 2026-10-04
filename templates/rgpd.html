@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}Règles RGPD{% endblock %}
+
+{% block main %}
+    <div class="text-start mx-auto" style="max-width: 700px;">
+        <h2 class="text-center mb-4">Vos données et celles de vos patients</h2>
+
+        <p>HandsOnData a été conçu pour minimiser les données traitées et ne conserver aucune information permettant d'identifier un patient.</p>
+
+        <h3 class="h5 mt-4">Pendant l'analyse</h3>
+        <ul>
+            <li>Dès la lecture du fichier, les colonnes identifiantes (noms, prénoms, téléphones, emails, adresses) et les notes sont supprimées. Seules les colonnes nécessaires aux statistiques sont conservées en mémoire.</li>
+            <li>Le fichier CSV est <strong>supprimé du serveur</strong> immédiatement après sa lecture, que l'analyse réussisse ou non.</li>
+        </ul>
+
+        <h3 class="h5 mt-4">Ce qui est conservé</h3>
+        <ul>
+            <li>Uniquement des <strong>statistiques agrégées</strong> (répartitions, moyennes, totaux), associées à votre compte et au nom du fichier analysé.</li>
+            <li>Aucune donnée individuelle de patient n'est stockée.</li>
+        </ul>
+
+        <h3 class="h5 mt-4">Limites et responsabilité</h3>
+            <p>HandsOnData est un projet pédagogique (projet final CS50). Les données sont pseudonymisées pendant le traitement, pas anonymisées au sens strict du RGPD. Ce service n'a pas vocation à remplacer un outil certifié pour l'hébergement de données de santé.</p>
+            <p>En important un export, <strong>l'ostéopathe reste seul responsable</strong> des données de ses patients : il lui appartient de s'assurer que leur utilisation à des fins d'analyse de son activité respecte ses obligations légales et déontologiques, notamment l'information de ses patients.</p>
+    </div>
+{% endblock %}
