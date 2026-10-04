@@ -123,3 +123,4 @@ Certaines fonctionnalités mériteraient d'être améliorées :
 
 ## Utilisation de l'IA
 Conformément aux règles du projet final CS50, j'ai utilisé l'IA comme tuteur et assistant sur certaines fonctionnalités du projet. Les parties où elle à eu un rôle sont liées à la compréhension et à la synthaxe de pandas, matplotlib (aide dans le code de certaines statistiques et  la conversion des graphiques en base64). La grille du dashboard a été ajouté par IA (au départ une première version codée par moi, puis amélioration pour le rendu visuel de cette dernière). Le fichier exemple est entièrement généré aléatoirement par IA et ne contient que des données aléatoires.
+- V2 : refonte visuelle (CSS, palette des graphiques) réalisée avec l'aide de l'IA, sans modification de la logique de l'application.
