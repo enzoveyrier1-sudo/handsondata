@@ -3,50 +3,41 @@
 {% block title %}Mes statistiques{% endblock %}
 
 {% block main %}
-    <h2 class="mb-4">Mes statistiques</h2>
+    <h2 class="mb-1">Mes statistiques</h2>
+    <p class="text-muted mb-4">{{ analyse.nom_fichier }}, du {{ analyse.periode_debut }} au {{ analyse.periode_fin }}</p>
 
-    <!-- Métadonnées de l'analyse -->
-    <div class="text-start mx-auto mb-5" style="max-width: 600px;">
-        <p><strong>Fichier :</strong> {{ analyse.nom_fichier }}</p>
-        <p><strong>Période analysée :</strong> du {{ analyse.periode_debut }} au {{ analyse.periode_fin }}</p>
-        <p><strong>Consultations analysées :</strong> {{ analyse.nb_consultations }}</p>
-        <p><strong>Patients inclus :</strong> {{ analyse.nb_patients_uniques }}</p>
-    </div>
+    <dl class="resume">
+        <div>
+            <dt>Consultations analysées</dt>
+            <dd>{{ analyse.nb_consultations }}</dd>
+        </div>
+        <div>
+            <dt>Patients inclus</dt>
+            <dd>{{ analyse.nb_patients_uniques }}</dd>
+        </div>
+    </dl>
 
-    <!-- Ligne 1 : profil de la patientèle -->
-    <div class="row mb-4">
+    <div class="row g-4 mb-4">
         <div class="col-md-6">
-            <img class="img-fluid" src="data:image/png;base64,{{ graph_hf }}" alt="Répartition H/F">
+            <div class="graphique"><img class="img-fluid" src="data:image/png;base64,{{ graph_hf }}" alt="Répartition H/F"></div>
         </div>
         <div class="col-md-6">
-            <img class="img-fluid" src="data:image/png;base64,{{ graph_tranches_age }}" alt="Tranches d'âge">
-        </div>
-    </div>
-
-    <!-- Ligne 2 : activité -->
-    <div class="row mb-4">
-        <div class="col-md-6">
-            <img class="img-fluid" src="data:image/png;base64,{{ graph_types_consultation }}" alt="Types de consultation">
+            <div class="graphique"><img class="img-fluid" src="data:image/png;base64,{{ graph_tranches_age }}" alt="Tranches d'âge"></div>
         </div>
         <div class="col-md-6">
-            <img class="img-fluid" src="data:image/png;base64,{{ graph_fidelisation }}" alt="Origine des consultations">
+            <div class="graphique"><img class="img-fluid" src="data:image/png;base64,{{ graph_types_consultation }}" alt="Types de consultation"></div>
         </div>
-    </div>
-
-    <!-- Ligne 3 : évolution mensuelle, pleine largeur -->
-    <div class="row mb-4">
+        <div class="col-md-6">
+            <div class="graphique"><img class="img-fluid" src="data:image/png;base64,{{ graph_fidelisation }}" alt="Origine des consultations"></div>
+        </div>
         <div class="col-12">
-            <img class="img-fluid" src="data:image/png;base64,{{ graph_frequentation }}" alt="Évolution mensuelle">
-        </div>
-    </div>
-
-    <!-- Ligne 4 : organisation de la semaine -->
-    <div class="row mb-4">
-        <div class="col-md-6">
-            <img class="img-fluid" src="data:image/png;base64,{{ graph_consultation_jours }}" alt="Moyenne par jour">
+            <div class="graphique"><img class="img-fluid" src="data:image/png;base64,{{ graph_frequentation }}" alt="Évolution mensuelle"></div>
         </div>
         <div class="col-md-6">
-            <img class="img-fluid" src="data:image/png;base64,{{ graph_heatmap }}" alt="Créneaux les plus demandés">
+            <div class="graphique"><img class="img-fluid" src="data:image/png;base64,{{ graph_consultation_jours }}" alt="Moyenne par jour"></div>
+        </div>
+        <div class="col-md-6">
+            <div class="graphique"><img class="img-fluid" src="data:image/png;base64,{{ graph_heatmap }}" alt="Créneaux les plus demandés"></div>
         </div>
     </div>
 

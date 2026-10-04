@@ -6,6 +6,20 @@ import matplotlib
 matplotlib.use("Agg")   # mode sans écran, obligatoire sur un serveur
 import matplotlib.pyplot as plt
 
+# Style commun des graphiques (couleurs de l'identité HandsOnData)
+plt.rcParams.update({
+    "axes.prop_cycle": matplotlib.cycler(color=["#2A9D8F", "#FF8C61", "#14283F", "#8FD3CA", "#F4C7B3", "#5B6B7A"]),
+    "axes.spines.top": False,
+    "axes.spines.right": False,
+    "axes.edgecolor": "#C5CED6",
+    "axes.labelcolor": "#5B6B7A",
+    "xtick.color": "#5B6B7A",
+    "ytick.color": "#5B6B7A",
+    "axes.titlesize": 13,
+    "axes.titleweight": "bold",
+    "axes.titlecolor": "#14283F",
+    "axes.titlepad": 12,
+})
 
 def figure_en_base64(fig):
     """Convertit une figure Matplotlib en chaîne base64 pour le HTML"""
@@ -102,7 +116,8 @@ def graphique_heatmap(heatmap):
         matrice.append(ligne)
 
     fig, ax = plt.subplots()
-    image = ax.imshow(matrice, cmap="Blues", aspect="auto")
+    palette = matplotlib.colors.LinearSegmentedColormap.from_list("hod", ["#F3F6F8", "#2A9D8F", "#14283F"])
+    image = ax.imshow(matrice, cmap=palette, aspect="auto")
 
     # Étiquettes des axes : jours en haut, heures à gauche
     ax.set_xticks(range(len(jours)))

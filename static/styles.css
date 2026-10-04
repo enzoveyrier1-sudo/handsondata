@@ -1,0 +1,110 @@
+/* Identité visuelle HandsOnData */
+:root {
+    --encre: #14283F;
+    --teal: #2A9D8F;
+    --teal-fonce: #1F7A70;
+    --corail: #FF8C61;
+    --fond: #F3F6F8;
+    --texte: #1E2A36;
+    --discret: #5B6B7A;
+    --trait: #DFE5EA;
+}
+
+body {
+    background: var(--fond);
+    color: var(--texte);
+    font-family: "Manrope", system-ui, sans-serif;
+}
+
+/* Barre de navigation */
+.hod-nav {
+    background: var(--encre);
+}
+.hod-nav .navbar-brand {
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+.hod-nav .navbar-brand span {
+    color: #5FD3C6;
+}
+.hod-nav .nav-link {
+    color: #C4D2DF;
+}
+.hod-nav .nav-link:hover,
+.hod-nav .nav-link:focus-visible {
+    color: #fff;
+}
+
+/* Titres */
+h2 {
+    color: var(--encre);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+/* Boutons */
+.btn-primary {
+    --bs-btn-bg: var(--teal);
+    --bs-btn-border-color: var(--teal);
+    --bs-btn-hover-bg: var(--teal-fonce);
+    --bs-btn-hover-border-color: var(--teal-fonce);
+    --bs-btn-active-bg: var(--teal-fonce);
+    font-weight: 600;
+}
+.btn-outline-primary {
+    --bs-btn-color: var(--teal-fonce);
+    --bs-btn-border-color: var(--teal);
+    --bs-btn-hover-bg: var(--teal);
+    --bs-btn-hover-border-color: var(--teal);
+}
+a {
+    color: var(--teal-fonce);
+}
+
+/* Tableaux (accueil, historique) */
+.table {
+    background: #fff;
+    border: 1px solid var(--trait);
+}
+.table thead th {
+    color: var(--discret);
+    font-weight: 600;
+    border-bottom: 2px solid var(--teal);
+}
+
+/* Dashboard : résumé de l'analyse */
+.resume {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+.resume div {
+    text-align: left;
+}
+.resume dt {
+    color: var(--discret);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+.resume dd {
+    color: var(--encre);
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+/* Dashboard : graphiques */
+.graphique {
+    background: #fff;
+    border: 1px solid var(--trait);
+    border-radius: 10px;
+    padding: 1rem;
+    height: 100%;
+}
+
+footer {
+    color: var(--discret);
+}
